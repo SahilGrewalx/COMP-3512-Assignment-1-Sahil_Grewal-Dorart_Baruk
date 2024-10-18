@@ -17,10 +17,9 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
         $driverStmt = $pdo->prepare("
             SELECT drivers.forename, drivers.surname, drivers.dob, drivers.nationality, drivers.url
             FROM drivers
-            WHERE drivers.driverId = :driverId
+            WHERE drivers.driverId = ?
         ");
-        $driverStmt->bindParam(':driverId', $driverId, PDO::PARAM_INT);
-        $driverStmt->execute();
+        $driverStmt->execute([$driverId]); 
         $driver = $driverStmt->fetch();
 
         if ($driver) {
@@ -38,11 +37,10 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
                 SELECT races.round, races.name AS circuit, results.position, results.points
                 FROM results
                 INNER JOIN races ON results.raceId = races.raceId
-                WHERE results.driverId = :driverId AND races.year = 2022
+                WHERE results.driverId = ? AND races.year = 2022
                 ORDER BY races.round
             ");
-            $resultStmt->bindParam(':driverId', $driverId, PDO::PARAM_INT);
-            $resultStmt->execute();
+            $resultStmt->execute([$driverId]); 
             $results = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
 
             echo '<h2>Race Results</h2>';
