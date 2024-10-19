@@ -1,0 +1,369 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+nav {
+    position: absolute;
+    right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+nav a:hover {
+    background-color: #ccc;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    flex: 1;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.left-section p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.browse-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #0056b3;
+}
+
+.browse-btn:hover {
+    background-color: #0056b3;
+}
+
+.right-section img {
+    max-width: 100%;
+    height: auto;
+    width: 700px;
+    border-radius: 10px;
+}
+
+footer {
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0;
+    color: #666;
+    margin-top: auto;
+    border-top: 1px solid #ccc;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.race-list {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.race-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.race-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.race-list span {
+    display: block;
+}
+
+.race-details {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.qualifying-results,
+.race-results {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.race-list {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.race-details {
+    flex: 2;
+}
+
+.results-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.result-box {
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.gold {
+    background-color: #ffd700;
+}
+
+.silver {
+    background-color: #c0c0c0;
+}
+
+.bronze {
+    background-color: #cd7f32;
+}
+
+.tables-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.qualifying-results,
+.race-results {
+    width: 48%;
+}
+
+.race-results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.race-results th,
+.race-results td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.race-results th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.race-results td {
+    background-color: #ffffff;
+}
+
+.race-results a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.race-results a:hover {
+    text-decoration: underline;
+}
+
+.position-1 {
+    border: 2px solid gold;
+}
+
+.position-2 {
+    border: 2px solid silver;
+}
+
+.position-3 {
+    border: 2px solid bronze;
+}
+
+.container-one {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+ h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.container-two {
+    display: inline-block;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    
+}
+
+.container-two h1, 
+.container-two p {
+    width: 500px;
+    font-size: 1.5em;
+    margin: 0;
+    text-align: center;
+    background-color: #ebe7e7;
+    padding: 5px; 
+    margin:auto;
+}
+
+.container-three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.heading-block {
+    width: 500px;
+    background-color: #ebe7e7;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.heading-block h1, 
+.heading-block h2, 
+.heading-block p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.heading-block p {
+    font-size: 1.75em; 
+}
+
+
+

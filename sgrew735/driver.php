@@ -9,7 +9,7 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
 
 ?>
 
-<div class="container">
+<div class="container container-two">
     <?php
     if (!empty($_GET['driverId'])) {
         $driverId = $_GET['driverId'];
@@ -19,7 +19,7 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
             FROM drivers
             WHERE drivers.driverId = ?
         ");
-        $driverStmt->execute([$driverId]); 
+        $driverStmt->execute([$driverId]);
         $driver = $driverStmt->fetch();
 
         if ($driver) {
@@ -40,7 +40,7 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
                 WHERE results.driverId = ? AND races.year = 2022
                 ORDER BY races.round
             ");
-            $resultStmt->execute([$driverId]); 
+            $resultStmt->execute([$driverId]);
             $results = $resultStmt->fetchAll(PDO::FETCH_ASSOC);
 
             echo '<h2>Race Results</h2>';

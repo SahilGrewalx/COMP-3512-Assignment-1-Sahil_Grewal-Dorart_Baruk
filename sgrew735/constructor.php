@@ -8,7 +8,7 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
 
 ?>
 
-<div class="container">
+<div class="container container-three">
     <?php
     if (!empty($_GET['constructorId'])) {
         $constructorId = $_GET['constructorId'];
@@ -22,8 +22,11 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
         $constructor = $constructorStmt->fetch();
 
         if ($constructor) {
+            echo '<div class="heading-block">';
             echo '<h1>' . $constructor['name'] . '</h1>';
             echo '<p>Nationality: ' . $constructor['nationality'] . '</p>';
+            echo '<h2>Race Results</h2>';
+            echo '</div>';
 
             $resultsStmt = $pdo->prepare("
                 SELECT races.round, races.name AS circuit, drivers.forename, drivers.surname, results.position, results.points, results.driverId
@@ -36,7 +39,6 @@ $pdo = DatabaseHelper::createConnection(['sqlite:' . __DIR__ . '/data/f1.db']);
             $resultsStmt->execute([$constructorId]);
             $results = $resultsStmt->fetchAll(PDO::FETCH_ASSOC);
 
-            echo '<h2>Race Results</h2>';
             if ($results) {
                 echo '<table>';
                 echo '<thead><tr><th>Round</th><th>Circuit</th><th>Driver</th><th>Position</th><th>Points</th></tr></thead>';
